@@ -19,7 +19,11 @@ app.get('/', async (req, res) => {
 })
 
 app.get('/users', async (req, res) => {
-    // Write your logic here
+    //Write your logic here
+    let response = await fetch("dummyjson.com/users");
+    let parsedres = response.json()
+
+    
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
