@@ -23,8 +23,10 @@ app.get('/users', async (req, res) => {
     let response = await fetch("dummyjson.com/users");
     let parsedres = response.json()
 
-    let user = new user(parsedres[1])
-    displayInfo(user)
+    for(let i = 1; i<=30; i++){
+        let user = new user(parsedres[i])
+        displayInfo(user)
+    }
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
